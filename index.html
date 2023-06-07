@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>만들기 실습01</title>
+    <!-- 링크 순서 지키기 첫번째 reset , 두번째 common , 맨 마지막에는 내가 건드는 css - 뒤에 들어온 것이 덮어쓰는 구조! -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/main.js"></script>
+
+
+</head>
+<!-- 코드명 규칙 - 클래스명만 쓸 것 / -(언더바)로 나누는 스네이크 표기법 쓸 것 (php는 스네이크 표기가 기준) -->
+
+<body>
+    <!-- 전체적으로 wrap으로 한번 감싸준다. -->
+    <div class="wrap">
+        <!-- header / main / footer 상징적-독립적으로(시맨틱) 세 구역으로 나뉜다.  -->
+        <header class="header">
+            <div class="inner header_wrap">
+                <h1>
+                    <a href="/">
+                        <!-- alt 는 회사명이나 중요 검색어로 다 채워주어야 한다. 이미지 검색에 쓰임 -->
+                        <img src="./img/grafflogo.png" alt="JEWELLERY">
+                    </a>
+                </h1>
+                <h2 class="hidden"></h2>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">JEWELLERY</a></li>
+                        <li><a href="">JEWELLERY</a></li>
+                        <li><a href="">JEWELLERY</a></li>
+                        <li><a href="">JEWELLERY</a></li>
+                        <li><a href="">JEWELLERY</a></li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <form method="get" action="f">
+                        <input type="text" name="search" placeholder="검색어 입력">
+                        <button>
+                            <i class="xi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- 섹션은 위치가 바뀔 수 있기때문에 클래스명에 숫자를 주지 않도록 한다 -->
+
+            <section class="main_visual">
+                <!-- 섹션마다 h2로 웹접근성 IR 적용 필요 -->
+                <h2 class="blind">JEWELLERY COLLECTION EVENT</h2>
+                <div class="main_slide">
+                    <div class="itm itm01">
+                        <div class="inner content">
+                            <!-- h태그 안에는 인라인 글자 관련된 태그만 들어갈수 있다 p도 블락이라서 들어가면 안됨 -->
+                            <h3><span>01 JEWELLERY</span><strong>COLLECTION EVENT</strong></h3>
+                            <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                            <a href="" class="btn white">view more <i class="xi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="itm itm02">
+                        <div class="inner content">
+                            <h3><span>02 JEWELLERY</span><strong>COLLECTION EVENT</strong></h3>
+                            <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                            <a href="" class="btn white">view more <i class="xi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="itm itm03">
+                        <div class="inner content">
+                            <h3><span>03 JEWELLERY</span><strong>COLLECTION EVENT</strong></h3>
+                            <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                            <a href="" class="btn white">view more <i class="xi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="#slide1">01</a>
+                    </li>
+                    <li>
+                        <a href="#slide2">02</a>
+                    </li>
+                    <li>
+                        <a href="#slide3">03</a>
+                    </li>
+                </ul>
+                <div class="arrows">
+                    <i class="xi-arrow-left left"></i>
+                    <i class="xi-arrow-right right"></i>
+                </div>
+                <div class="slide_num">
+                    <span>1</span> / <strong>3</strong>
+                </div>
+                <a href="#down" class="scr">
+                    <span>scroll down</span>
+                </a>
+            </section>
+            <section class="main_event sec" id="down">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                </div>
+                <div class="inner content">
+                    <figure data-aos="fade-up">
+                        <div class="img_box">
+                            <img src="./img/lesedilarona01.jpg" alt="">
+                        </div>
+                        <figcaption>
+                            <ul class="des">
+                                <li>
+                                    <strong>재원</strong>
+                                    <span>철</span>
+                                </li>
+                                <li>
+                                    <strong>배기량</strong>
+                                    <span>많음</span>
+                                </li>
+                                <li>
+                                    <strong>가격</strong>
+                                    <span>100원</span>
+                                </li>
+                            </ul>
+                            <a href="" class="btn blue">구매하기</a>
+                        </figcaption>
+                    </figure>
+                    <figure data-aos="fade-up" data-aos-delay="500">
+                        <div class="img_box">
+                            <img src="./img/lesedilarona02.jpg" alt="">
+                        </div>
+                        <figcaption>
+                            <ul class="des">
+                                <li>
+                                    <strong>재원</strong>
+                                    <span>철</span>
+                                </li>
+                                <li>
+                                    <strong>배기량</strong>
+                                    <span>많음</span>
+                                </li>
+                                <li>
+                                    <strong>가격</strong>
+                                    <span>100원</span>
+                                </li>
+                            </ul>
+                            <a href="" class="btn">구매하기</a>
+                        </figcaption>
+                    </figure>
+                    <figure data-aos="fade-up" data-aos-delay="1000">
+                        <div class="img_box">
+                            <img src="./img/lesedilarona03.jpg" alt="">
+                        </div>
+                        <figcaption>
+                            <ul class="des">
+                                <li>
+                                    <strong>재원</strong>
+                                    <span>철</span>
+                                </li>
+                                <li>
+                                    <strong>배기량</strong>
+                                    <span>많음</span>
+                                </li>
+                                <li>
+                                    <strong>가격</strong>
+                                    <span>100원</span>
+                                </li>
+                            </ul>
+                            <a href="" class="btn">구매하기</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+
+            <section class="main_banner sec">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                    <a href="">
+                        <span>more</span><i class="xi-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+
+            <section class="main_product sec">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                </div>
+                <div class="inner content">
+                    <div class="left">
+                        <div class="pic_slide">
+                            <figure>
+                                <img src="./img/mainvisual01.jpg" alt="">
+                            </figure>
+                            <figure>
+                                <img src="./img/mainvisual02.jpg" alt="">
+                            </figure>
+                            <figure>
+                                <img src="./img/mainvisual03.jpg" alt="">
+                            </figure>
+                            <figure>
+                                <img src="./img/mainvisual02.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="product_slide">
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/lesedilarona01.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <strong>하우스의 시그너쳐 컬렉션</strong>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/lesedilarona02.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <strong>하우스의 시그너쳐 컬렉션</strong>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/lesedilarona03.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <strong>하우스의 시그너쳐 컬렉션</strong>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/lesedilarona04.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <strong>하우스의 시그너쳐 컬렉션</strong>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="main_big_product sec">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                </div>
+                <div class="inner">
+                    <div class="case">
+                        <div class="product_slide2">
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/mainvisual01.jpg" alt="">
+                                </div>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/mainvisual02.jpg" alt="">
+                                </div>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/mainvisual03.jpg" alt="">
+                                </div>
+                            </figure>
+                            <figure>
+                                <div class="img_box">
+                                    <img src="./img/mainvisual02.jpg" alt="">
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="arrows">
+                        <i class="xi-arrow-left left"></i>
+                        <i class="xi-arrow-right right"></i>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="main_history sec">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                </div>
+                <div class="inner history">
+                    <div class="left">
+                        <ul class="history_menu">
+                            <li><strong>2023</strong>
+                                <a href=""> Lorem ipsum dolor amet co, sit amet consectetur adipisicing elit. Commodi,
+                                    voluptates.olor amet co,olor amet co,olor amet co,olor amet co,olor amet co,olor
+                                    amet
+                                    co,olor amet co,olor amet co,olor amet co,s
+                                </a>
+                            </li>
+                            <li><strong>2022</strong><a href=""> Lorem ipsum dolor, sit amet com dolornsectetur
+                                    adipisicing
+                                    elit. Commodi,
+                                    voluptates.</a></li>
+                            <li><strong>2021</strong><a href=""> Lorem ipsuecr adip,ng elit. Commodi,
+                                    voluptates.</a></li>
+                            <li><strong>2020</strong><a href=""> Lorem ip amet cosum dolor, sit amet consectetur
+                                    adipisicing
+                                    elit. Commodi,
+                                    voluptates.</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <ul class="history_content">
+                            <li class="on">
+
+                                <figure>
+                                    <img src="./img/mainvisual01.jpg" alt="">
+                                </figure>
+
+                                Lorem ip sit amet consectetur adipisicing elit. Comsum sit amet consectetur
+                                adipisicing elit. Comdolor, s sit amet consectetur aecteturdipisicing elit. Comit amet
+                                consectetur
+                                adipisicing elit. Commodi, voluptates.
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./img/mainvisual02.jpg" alt="">
+                                </figure>
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Com, s sit amet consectetur
+                                adipisicing elit. Comit ame sit amet consectetur adipisicing elit. Com sit amet
+                                consectetur
+                                adipisicing elit. Comt consectetur adipisicing elit. Commodi, voluptates.
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./img/mainvisual03.jpg" alt="">
+                                </figure>
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Com, s sit amet consectetur
+                                adipisicing elit. Comit sit amet consectetur adipisicing elit. Comamet consectetur
+                                adipisicing elit. Commodi, voluptates.
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./img/mainvisual02.jpg" alt="">
+                                </figure>
+                                Lorem ipsum dol sit amet consectetur adipisicing
+                                elit. Comor, s sit amet consectetur
+                                adipisicing elit. Com sit amet conseur adipisicing eliur adipisicing eliur adipisicing
+                                elictetur adipisicing elit. Comit amet consectetur
+                                adipisicing elit. Commodi, voluptates.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="main_portfolio sec">
+                <div class="title">
+                    <h2>JEWELLERY COLLECTION EVENT</h2>
+                    <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+                </div>
+                <div class="inner content">
+                    <div class="portfolio_slide">
+                        <figure>
+                            <img src="./img/mainvisual01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/mainvisual02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/mainvisual03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/mainvisual01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/mainvisual02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/mainvisual03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab_txt">
+                        <div class="itm on">
+                            <h3>01. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                        <div class="itm">
+                            <h3>02. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Veritatilorems, Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
+                                impedit? nam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea
+                                placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?sdsdsdsdddddddddddd</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                        <div class="itm">
+                            <h3>03. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                        <div class="itm">
+                            <h3>04. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                        <div class="itm">
+                            <h3>05. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                        <div class="itm">
+                            <h3>06. Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat ea placeat
+                                doloribus sit distinctio laboriosam fugiat laborum ex unde?</p>
+
+                            <a href="" class="btn">더 보기</a>
+                        </div>
+                    </div>
+                    <div class="tab_arrows">
+                        <div class="left">
+                            <span>prev</span>
+                        </div>
+                        <div class="right">
+                            <span>next</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+
+        <footer class="footer">
+            <h2 class="hidden"></h2>
+            <div class="ft">
+                <div class="inner content">
+                    <ul class="customer">
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">문의하기</a></li>
+                        <li><a href="">개인정보 취급방침</a></li>
+                        <li><a href="">방문 예약하기</a></li>
+                        <li><a href="">사이즈 가이드</a></li>
+                        <li><a href="">그라프 하우스 소개</a></li>
+                    </ul>
+                    <ul class="sns">
+                        <li><a href="_blank"><i class="xi-instagram"></i></a></li>
+                        <li><a href="_blank"><i class="xi-kakaotalk"></i></a></li>
+                        <li><a href="_blank"> <i class="xi-facebook"></i></a></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <div class="fb">
+                <div class="inner content">
+                    <address>
+                        <ul class="link">
+                            <li> <a href="tel:051-783-2317">전화번호 : 051-783-2317</a> </li>
+                            <li><a href="mailto:sipossa@naver.com">이메일 : sipossa@naver.com</a> </li>
+                            <li>Graff France Headquarters 237 rue Saint-Honore Paris
+                                75001</li>
+                            <li>&copy; Graff</li>
+                        </ul>
+                    </address>
+                    <div class="family_link">
+                        <!-- 패밀리링크 만들 때 ul에 a태그를 쓰기도 하고 slect폼으로 만들기도 한다. 폼으로 만들면 css디자인이 어렵다. 하지만 많이 쓰는 방식 -->
+                        <select id="fl">
+                            <option value="">패밀리링크</option>
+                            <option value="http://naver.com">네이버</option>
+                            <option value="http://daum.net">다음</option>
+                            <option value="http://google.co.kr">구글</option>
+                        </select>
+                    </div>
+
+                    <div class="family_link2">
+                        <!-- 패밀리링크 만들 때 ul에 a태그를 쓰기도 하고 slect폼으로 만들기도 한다. -->
+                        <div class="fl2">
+                            <span>패밀리링크 <i class="xi-angle-up-min"></i></span>
+                            <ul>
+                                <li><a href="http://naver.com" target="_blank">네이버</a></li>
+                                <li><a href="http://daum.net" target="_blank">다음</a></li>
+                                <li><a href="http://google.co.kr" target="_blank">구글</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+
+
+
+        <div class="to_top">
+            <i class="xi-arrow-top"></i>
+        </div>
+
+
+    </div>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
